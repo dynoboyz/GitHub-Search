@@ -2,11 +2,12 @@
 ## An app that will search Github repositories based on keyword.
 
 ## Features
-- It will call search API when user press Enter
-- User can navigate through the list using pagination. Total 10 items per list.
-- Each item will have - Full name, description, language, total stars and update date
-- If no result, notify user with appropriate message
-- Extra credit if using either Angular (v2-v6), React or Vue, and also if included unit test.
+- [x] It will call search API when user press Enter
+- [x] User can navigate through the list using pagination. Total 10 items per list.
+- [x] Each item will have - Full name, description, language, total stars and update date
+- [x] If no result, notify user with appropriate message
+- [x] Extra credit if using either Angular (v2-v6), React or Vue
+- [ ] Extra credit if included unit test.
 
 gitSearchApi = "https://api.github.com/search/repositories?per_page=${per_page}&q=
 
