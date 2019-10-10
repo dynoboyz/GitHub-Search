@@ -1,5 +1,5 @@
 <div class="content">
-  <h2>GitHub-Search</h2>
+  <h2>{{title}}</h2>
   <h3>536993 repository results</h3>
   <table class="githubs">
     <tr>
@@ -21,7 +21,7 @@
     </tr>
     <tr class="page">
       <td colspan=3 class="paging">
-        <!-- TODO pagination -->
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
       </td>
     </tr>
   </table>
