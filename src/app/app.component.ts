@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RestService } from '../app/rest.service';
 
 @Component({
   selector: 'app-root',
@@ -16,31 +17,33 @@ export class AppComponent {
   collection = {
     status: '',
     message: '',
-    total_count: 100,
+    total_count: 0,
     items: []
   };
   error: any;
   search = 'fly';
 
-  constructor() {
+  constructor(public rest: RestService) { }
+
+  ngOnInit() {
     this.getGithubs({itemsPerPage: 10, currentPage: 1});
   }
 
   pageChanged(event) {
     this.config.currentPage = event;
+    this.getGithubs(this.config);
   }
 
   getGithubs(config: any) {
-    // Create dummy data
-    for (let i = 0; i < this.collection.total_count; i++) {
-      this.collection.items.push({
-          html_url: '',
-          full_name: 'facebook/react ' + i,
-          description: 'A declarative, efficient and flexible Javascript library for building user interfaces.',
-          updated_at: 'Tue Jul 03 2018',
-          language: 'Javascript',
-          stargazers_count: 105262
-      });
-    }
+    this.rest.getGitHubs(config.currentPage, config.itemsPerPage, this.search).subscribe((data: {
+      status, message, total_count, items
+    }) => {
+      this.error = '';
+      this.collection = data;
+      this.config.totalItems = this.collection.total_count;
+    },
+    error => {
+      this.error = error.error;
+    });
   }
 }

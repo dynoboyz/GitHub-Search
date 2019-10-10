@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgxPaginationModule
   ],
   providers: [],

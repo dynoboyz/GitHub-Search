@@ -3,9 +3,10 @@
   <div class="search">
     <span class="fa fa-search"></span>
     <input #search class="search" type="text" placeholder="Search...">
+    <div *ngIf="error" class="error">{{error.message}}</div>
   </div>
   <h4>536993 repository results</h4>
-  <table class="githubs">
+  <table *ngIf="!error" class="githubs">
     <tr *ngFor="let item of collection.items | paginate: config">
       <td class="item">
         <div class="fname"><a [href]="item.html_url">{{item.full_name}}</a></div>
@@ -26,6 +27,7 @@
     <tr class="page">
       <td colspan=3 class="paging">
         <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+      </td>
     </tr>
   </table>
 </div>
