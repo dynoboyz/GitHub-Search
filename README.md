@@ -1,10 +1,22 @@
 # GitHubSearch
+## An app that will search Github repositories based on keyword.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
+## Features
+- It will call search API when user press Enter
+- User can navigate through the list using pagination. Total 10 items per list.
+- Each item will have - Full name, description, language, total stars and update date
+- If no result, notify user with appropriate message
+- Extra credit if using either Angular (v2-v6), React or Vue, and also if included unit test.
 
-## Development server
+gitSearchApi = "https://api.github.com/search/repositories?per_page=${per_page}&q=
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Setup
+
+`npm install -g @angular/cli@6.2.9`
+
+## Run
+
+`ng serve` & navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -12,16 +24,12 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`ng build` will build & stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`ng test` unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`ng e2e` end-to-end tests via [Protractor](http://www.protractortest.org/).
