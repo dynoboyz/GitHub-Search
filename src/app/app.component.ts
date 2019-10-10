@@ -44,6 +44,7 @@ export class AppComponent {
   }
 
   searchGitHub(search: string) {
+    this.config.currentPage = 1;
     this.search = search;
     this.getGithubs(this.config);
   }
