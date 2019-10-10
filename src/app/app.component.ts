@@ -21,13 +21,9 @@ export class AppComponent {
     items: []
   };
   error: any;
-  search = 'fly';
+  search: string;
 
   constructor(public rest: RestService) { }
-
-  ngOnInit() {
-    this.getGithubs({itemsPerPage: 10, currentPage: 1});
-  }
 
   pageChanged(event) {
     this.config.currentPage = event;
@@ -45,5 +41,10 @@ export class AppComponent {
     error => {
       this.error = error.error;
     });
+  }
+
+  searchGitHub(search: string) {
+    this.search = search;
+    this.getGithubs(this.config);
   }
 }
