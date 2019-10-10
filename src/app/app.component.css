@@ -24,14 +24,15 @@ div.search {
 .search input {
   border: 1px solid lightgray;
   border-spacing: 0;
+  height: 32px;
   margin: 15px;
   padding: 3px;
   text-align: left;
   width: 100%;
 }
 .search .fa-search {
-  font-size: 15px;
   cursor: pointer;
+  font-size: 15px;
   position: absolute;
   right: 0px;
   top: 24px;

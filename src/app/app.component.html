@@ -6,27 +6,26 @@
   </div>
   <h4>536993 repository results</h4>
   <table class="githubs">
-    <tr>
+    <tr *ngFor="let item of collection.items | paginate: config">
       <td class="item">
-        <div class="fname"><a [href]="">facebook/react</a></div>
-        <div class="desc">A declarative, efficient and flexible Javascript library for building user interfaces.</div>
-        <div class="update">Updated on Tue Jul 03 2018</div>
+        <div class="fname"><a [href]="item.html_url">{{item.full_name}}</a></div>
+        <div class="desc">{{item.description}}</div>
+        <div class="update">Updated on {{item.updated_at | date:'EEE LLL dd yyyy'}}</div>
       </td>
       <td class="detail">
         <div>
-            <i class="fas fa-circle"></i> Javascript
+            <i class="fas fa-circle"></i> {{item.language}}
         </div>
       </td>
       <td class="detail">
         <div>
-            <i class="fas fa-star"></i> 105262
+            <i class="fas fa-star"></i> {{item.stargazers_count | number}}
         </div>
       </td>
     </tr>
     <tr class="page">
       <td colspan=3 class="paging">
         <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
-      </td>
     </tr>
   </table>
 </div>
