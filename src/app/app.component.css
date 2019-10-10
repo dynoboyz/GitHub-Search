@@ -1,0 +1,59 @@
+.content {
+  font-family: sans-serif;
+}
+h2, h3 {
+  padding: 8px;
+}
+table, h2, h3 {
+  border-spacing: 0;
+  margin: auto;
+  width: 80%;
+}
+table tr{
+  background: white;
+}
+table tr:hover {
+  background-color: lightgray;
+}
+th, td {
+  border-top: 1px solid #ddd;
+}
+td.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+td.detail {
+  color: dimgrey;
+  font-size: 14px;
+  padding: 2px 15px;
+  text-align: left;
+  vertical-align: top;
+  width: 15%;
+}
+.fname {
+  color: dodgerblue;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 2px 15px;
+}
+a {
+  color: dodgerblue;
+  text-decoration: none;
+}
+.desc {
+  font-size: 14px;
+  padding: 0px 15px 2px 15px;
+}
+.update {
+  color: dimgrey;
+  font-size: 12px;
+  padding: 3px 15px;
+}
+i {
+  color: dimgrey;
+  font-size: 15px;
+}
+table tr.page:hover {
+  background-color: white;
+}
